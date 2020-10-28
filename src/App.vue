@@ -731,6 +731,7 @@ body {
         color: white;
         text-transform: uppercase;
         outline: none;
+        align-self: center;
 
         &:hover {
             background: lighten($color: #4e4376, $amount: 10);

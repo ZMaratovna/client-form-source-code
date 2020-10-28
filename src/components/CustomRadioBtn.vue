@@ -36,11 +36,14 @@ div {
     .group {
         width: 50%;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-evenly;
         align-items: center;
 
         label.title {
             padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
 
         .container {
