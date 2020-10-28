@@ -1,0 +1,388 @@
+@media screen and (max-width: 769px) and (min-width: 501px) {
+	.form {
+		width: 500px;
+		padding: 20px;
+		border-radius: 15px;
+		margin-bottom: 30px;
+		font-size: 12px;
+		span {
+			font-size: 8px;
+			color: #4e4376;
+		}
+		.grid_1 {
+			grid-template-columns: 15px 120px auto 120px auto 120px 15px;
+
+			.checkBox {
+				flex-direction: column;
+				justify-content: space-between;
+				span {
+					padding-left: 0px;
+				}
+			}
+		}
+		.grid_2 {
+			grid-template-columns: 15px 180px auto 180px 15px;
+			#address_row {
+				.address_row--item {
+					width: 120px;
+				}
+			}
+		}
+		.grid_3 {
+			grid-template-columns: 15px 180px auto 180px 15px;
+		}
+	}
+	//radioBtnGroup style
+	div {
+		.group {
+			flex-direction: column;
+			label.title {
+				padding-left: 0;
+				margin-top: 5px;
+			}
+
+			.container {
+				width: 16px;
+				height: 16px;
+				input {
+					&:checked + .checkmark::after {
+						width: 10px;
+						height: 10px;
+
+						top: 2px;
+						left: 2px;
+						right: 2px;
+						bottom: 2px;
+					}
+				}
+				.checkmark {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+	}
+
+	//toggleButton style
+	.slider-container {
+		width: 32px;
+		height: 16px;
+	}
+
+	.round {
+		width: 32px;
+		height: 16px;
+		border-radius: 8px;
+	}
+
+	.round::before {
+		width: 10px;
+		height: 10px;
+		top: 2px;
+		left: 2px;
+		transition: 0.4s;
+	}
+
+	input[type='checkbox']:checked + .round::before {
+		background: linear-gradient(#2b5876, #4e4376);
+		transform: translateX(16px);
+	}
+}
+@media screen and (max-width: 500px) {
+	.form {
+		width: 320px;
+		padding: 0px;
+		border-radius: 8px;
+		margin-bottom: 50px;
+		fieldset {
+			padding: 0;
+			border: none;
+			legend {
+				font-size: 14px;
+				background-color: lighten($color: #4e4376, $amount: 60);
+				width: 320px;
+				margin-bottom: 20px;
+			}
+			label,
+			span {
+				justify-self: center;
+				font-size: 9px;
+			}
+		}
+		.grid_1 {
+			height: auto;
+			width: 310px;
+			grid-template-columns: 15px 132px 16px 132px 15px;
+			grid-template-rows: repeat(9, 30px);
+			font-size: 10px;
+			#name {
+				grid-row: 2 / 3;
+				grid-column: 2/ 3;
+			}
+
+			label[for='name'] {
+				grid-row: 3 / 4;
+				grid-column: 2 / 3;
+			}
+
+			.input--error.name {
+				grid-row: 1 / 2;
+				grid-column: 2 /3;
+			}
+			#patronymic {
+				grid-row: 2 / 3;
+				grid-column: 4 / 5;
+			}
+
+			label[for='patronymic'] {
+				grid-row: 3 / 4;
+				grid-column: 4 / 5;
+			}
+			#surname {
+				grid-row: 4 / 5;
+				grid-column: 2 / 3;
+			}
+
+			label[for='surname'] {
+				grid-row: 5/ 6;
+				grid-column: 2 / 3;
+			}
+
+			.input--error.surname {
+				grid-row: 3 / 4;
+				grid-column: 2 / 3;
+			}
+			.radioBox {
+				grid-row: 4/5;
+				grid-column: 4/5;
+
+				flex-direction: column;
+			}
+
+			#phone_number {
+				grid-row: 6 / 7;
+				grid-column: 2 / 3;
+			}
+			label[for='phone_number'] {
+				grid-row: 7/8;
+				grid-column: 2/3;
+			}
+			.input--error.phone_number {
+				grid-row: 5/6;
+				grid-column: 2/3;
+			}
+
+			.clientDoctor {
+				grid-row: 8/9;
+				grid-column: 2/3;
+			}
+
+			.clientDoctor_tip {
+				grid-row: 9/10;
+				grid-column: 2/3;
+			}
+
+			.clientGroup {
+				grid-row: 8/9;
+				grid-column: 4/5;
+			}
+
+			.input--error.clientGroup {
+				grid-row: 7/8;
+				grid-column: 4/5;
+			}
+
+			.clientGroup_tip {
+				grid-row: 9/10;
+				grid-column: 4/5;
+			}
+		}
+
+		.grid_2 {
+			width: 310px;
+			grid-template-rows: repeat(9, 30px);
+			grid-template-columns: 15px 132px 16px 132px 15px;
+			font-size: 10px;
+			padding-bottom: 20px;
+
+			#address_row {
+				grid-column: 2/5;
+				grid-row: 7/8;
+				justify-content: space-between;
+				#street {
+					width: 140px;
+				}
+				#flat,
+				#building {
+					width: 60px;
+					align-self: flex-end;
+				}
+				.address_row--item {
+					display: flex;
+					flex-direction: column;
+
+					label {
+						align-self: center;
+					}
+				}
+			}
+
+			#city {
+				grid-column: 2 / 5;
+				grid-row: 5/6;
+			}
+
+			label[for='city'] {
+				grid-column: 2/5;
+				grid-row: 6/7;
+			}
+
+			.input--error.city {
+				grid-column: 2/3;
+				grid-row: 4/5;
+			}
+
+			#region {
+				grid-column: 2/5;
+				grid-row: 3/4;
+			}
+
+			label[for='region'] {
+				grid-column: 2/5;
+				grid-row: 4/5;
+			}
+
+			#index {
+				grid-column: 2/5;
+				grid-row: 9/10;
+			}
+
+			label[for='index'] {
+				grid-column: 2/5;
+				grid-row: 10/11;
+			}
+
+			.input--error.index {
+				grid-column: 2/3;
+				grid-row: 8/9;
+			}
+
+			#country {
+				grid-column: 2/5;
+				grid-row: 1/2;
+			}
+
+			label[for='country'] {
+				grid-column: 2/5;
+				grid-row: 2/3;
+			}
+		}
+
+		.grid_3 {
+			width: 310px;
+			grid-template-rows: repeat(9, 30px);
+			grid-template-columns: 15px 132px 16px 132px 15px;
+			font-size: 10px;
+
+			#doc_type {
+				grid-row: 2/3;
+				grid-column: 2/3;
+			}
+
+			label[for='doc_type'] {
+				grid-row: 3/4;
+				grid-column: 2/3;
+			}
+
+			.input--error.doc_type {
+				grid-row: 1/2;
+				grid-column: 2/3;
+				align-self: flex-end;
+				padding-bottom: 3px;
+			}
+
+			#serial_num {
+				grid-row: 2/3;
+				grid-column: 4/5;
+			}
+
+			label[for='serial_num'] {
+				grid-row: 3/4;
+				grid-column: 4/5;
+			}
+
+			#doc_num {
+				grid-row: 4/5;
+				grid-column: 4/5;
+			}
+
+			label[for='doc_num'] {
+				grid-row: 5/6;
+				grid-column: 4/5;
+			}
+
+			#issued_by {
+				grid-row: 6/7;
+				grid-column: 2/5;
+			}
+
+			label[for='issued_by'] {
+				grid-row: 7/8;
+				grid-column: 2/5;
+			}
+
+			#date_of_issue {
+				grid-row: 4/5;
+				grid-column: 2/3;
+			}
+
+			label[for='date_of_issue'] {
+				grid-row: 5/6;
+				grid-column: 2/3;
+			}
+
+			.input--error.date_of_issue {
+				grid-row: 3/4;
+				grid-column: 2/3;
+				align-self: flex-end;
+				padding-bottom: 3px;
+			}
+		}
+
+		button[type='submit'] {
+			width: 220px;
+			align-self: center;
+			margin-bottom: 50px;
+		}
+	}
+	///RadioGroup style
+	div {
+		.group {
+			flex-direction: column;
+			label.title {
+				padding-left: 0;
+				margin-top: 5px;
+			}
+
+			.container {
+				width: 16px;
+				height: 16px;
+				input {
+					&:checked + .checkmark::after {
+						width: 10px;
+						height: 10px;
+
+						top: 2px;
+						left: 2px;
+						right: 2px;
+						bottom: 2px;
+					}
+				}
+				.checkmark {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+	}
+}
